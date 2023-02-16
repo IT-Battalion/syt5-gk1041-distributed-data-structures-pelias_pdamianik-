@@ -58,7 +58,7 @@ Da Atomix leider wirklich überhauptnicht funktioniert hat, haben wir uns an Spa
 
 Dann habe ich mittels `./bin/run-example SparkPi` das Pi example ausgeführt.
 
-
+Das hat funktioniert !!! :D
 
 #### RMI
 
