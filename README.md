@@ -29,7 +29,26 @@ Apache Spark, Atomix, Hadoop und Storm sind alle Frameworks, die für verteiltes
 
 Zusammenfassend lässt sich sagen, dass alle Frameworks in der Cloud-Umgebung einsetzbar sind und für verteiltes Rechnen ausgelegt sind. Spark und Hadoop sind besonders gut geeignet für Anwendungen mit hohen Anforderungen an paralleles Rechnen und Datenverarbeitung, während Atomix und Storm besser für ereignisbasierte Anwendungen geeignet sind. Die Auswahl eines Frameworks hängt von den spezifischen Anforderungen der Anwendung ab. [1][2][3]
 
+**RDD ->** steht für "Resilient Distributed Datasets" und ist ein zentraler 
+Bestandteil des Apache Spark-Frameworks. RDDs sind eine 
+Abstraktionsebene, die es ermöglicht, große Datenmengen in einem Cluster
+ parallel zu verarbeiten. Sie sind resilient, da sie automatisch auf 
+fehlgeschlagene Knoten im Cluster reagieren und ihre Daten replizieren 
+können, um sicherzustellen, dass die Datenverarbeitung fehlertolerant 
+und skalierbar bleibt. [1]
 
+#### Atomix
+
+Ich habe mich dazu entschieden erstmal Atmoix [4] zu testen. Hierfür habe ich mir das verlinkte Repository angesehen und nachgebaut. 
+
+Anschließend habe ich mir von Mavencentral den standalone atomix server heruntergeladen und ihn wie im Tutorial beschrieben versucht zu starten.
+
+`java -jar atomix-standalone-server-1.0.8.jar -address 127.0.0.1:8700 -bootstrap -config atomix.properties`
+
+Dabei habe ich jedoch immer wieder den selben Fehler bekommen:
+`kein Hauptmanifestattribut, in atomix-standalone-server-1.0.8.jar`
+
+Außerdem bin ich auf ein weiteres Problem gestoßen: Was gehört in die atomix.properties? Ich habe intensive nach einer Lösung gesucht doch für beide Probleme keine gefunden: Der Manifest Error kommt daher, dass in der Manifest Datei keine main Class angegeben wurde, das konnte ich bestätigen, indem ich die jar dekompiliert habe. 
 
 ## Quellen
 
@@ -39,6 +58,4 @@ Zusammenfassend lässt sich sagen, dass alle Frameworks in der Cloud-Umgebung ei
 
 [3] "Understanding Hadoop v/s Spark v/s Storm"; [Understanding Hadoop v/s Spark v/s Storm | Cognixia](https://www.cognixia.com/blog/understanding-hadoop-vs-spark-vs-storm/); zuletzt besucht am 16.02.2023
 
-[4] "";
-
-
+[4] "Introduction to Atomix"; [Introduction to Atomix | Baeldung](https://www.baeldung.com/atomix); zuletzt besucht am 16.02.2023
