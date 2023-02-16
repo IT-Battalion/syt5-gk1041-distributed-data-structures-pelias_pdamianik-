@@ -50,6 +50,20 @@ Dabei habe ich jedoch immer wieder den selben Fehler bekommen:
 
 Außerdem bin ich auf ein weiteres Problem gestoßen: Was gehört in die atomix.properties? Ich habe intensive nach einer Lösung gesucht doch für beide Probleme keine gefunden: Der Manifest Error kommt daher, dass in der Manifest Datei keine main Class angegeben wurde, das konnte ich bestätigen, indem ich die jar dekompiliert habe. 
 
+Weiteres ist im übrigen die Dokumentation auf der Website nicht vollständig und teilweise fehlen Abschnitte.
+
+#### Spark
+
+Da Atomix leider wirklich überhauptnicht funktioniert hat, haben wir uns an Spark herangewagt. Dazu haben wir uns wie auch bei Atomix erstmal examples angeschaut und das repository geklont. Anschließend habe ich mithilfe von `./build/mvn -DskipTests clean package` Spark und vorallem die Examples gebuildet. 
+
+Dann habe ich mittels `./bin/run-example SparkPi` das Pi example ausgeführt.
+
+
+
+#### RMI
+
+Da Prof. Roschger der Überzeugung war, das unser RMI Beispiel vom letzten Semester eine akzeptable Abgabe für diese Übung ist, haben wir auch unseren RMI Code hinzugefügt. :)
+
 ## Quellen
 
 [1] ChatGPT; 
