@@ -40,6 +40,56 @@ fehlgeschlagene Knoten im Cluster reagieren und ihre Daten replizieren
 können, um sicherzustellen, dass die Datenverarbeitung fehlertolerant 
 und skalierbar bleibt. [1]
 
+#### Tasks
+Tasks sind Einheiten von Aufgaben oder Prozessen, die von einem 
+Computersystem ausgeführt werden können. In der Regel bestehen sie aus 
+einer Reihe von Schritten oder Algorithmen, die eine bestimmte Funktion 
+erfüllen oder ein bestimmtes Ziel erreichen sollen. Tasks können 
+unterschiedliche Komplexitätsstufen aufweisen, von einfachen Operationen 
+wie das Sortieren einer Liste bis hin zu komplexen Verarbeitungsprozessen 
+wie die Analyse von großen Datensätzen.
+
+Beispiele für einfache Tasks sind:
+
+    Das Sortieren einer Liste von Zahlen in aufsteigender oder 
+absteigender Reihenfolge
+    Das Durchsuchen einer Textdatei nach einem bestimmten Wort oder 
+Ausdruck
+    Die Berechnung der Summe oder des Durchschnitts einer Liste von Zahlen
+    Die Generierung eines zufälligen Passworts
+    Das Laden von Daten aus einer Datenbank
+
+Beispiele für komplexe und aufteilbare Tasks sind:
+
+    Die Analyse großer Datensätze, z.B. zur Erstellung von 
+Vorhersagemodellen in der künstlichen Intelligenz oder Machine Learning
+    Die Erstellung von Grafiken oder Diagrammen aus großen Datenmengen
+    Die Simulation von physikalischen Prozessen oder komplexen Systemen
+    Die Aufteilung von Daten in kleinere Teilmengen, die von mehreren 
+Rechenknoten gleichzeitig verarbeitet werden können, um die 
+Verarbeitungsgeschwindigkeit zu erhöhen.
+
+Diese komplexen und aufteilbaren Tasks erfordern häufig eine Aufteilung in 
+mehrere Teilaufgaben, die parallel auf verschiedenen Rechenknoten 
+ausgeführt werden können. Dies kann durch das Master/Worker Pattern oder 
+das Map-Reduce Pattern erreicht werden.
+
+Beim Master/Worker Pattern ist ein zentraler Master-Server für die 
+Aufteilung und Koordination der Aufgaben zuständig. Der Master-Server 
+teilt den Tasks die verfügbaren Worker-Knoten zu und sammelt die 
+Ergebnisse wieder ein, wenn die Verarbeitung abgeschlossen ist. Das 
+Map-Reduce Pattern ist eine spezielle Form des Master/Worker Patterns, bei 
+dem die Daten automatisch in kleine Teilmengen aufgeteilt werden und 
+parallel von mehreren Worker-Knoten verarbeitet werden können, bevor sie 
+wieder zusammengeführt werden.
+
+Ein Beispiel für den Einsatz des Master/Worker Patterns ist die Analyse 
+großer Datenmengen in der Wissenschaft oder im Geschäftsumfeld. Hier 
+können die Daten in kleinere Teilmengen aufgeteilt und von mehreren 
+Rechenknoten gleichzeitig verarbeitet werden, um die 
+Verarbeitungsgeschwindigkeit zu erhöhen und die Ergebnisse schneller zu 
+erhalten.
+
 #### Atomix
 
 Ich habe mich dazu entschieden erstmal Atmoix [7] zu testen. Hierfür habe ich mir das verlinkte Repository angesehen und nachgebaut. 
