@@ -50,7 +50,6 @@ wie das Sortieren einer Liste bis hin zu komplexen Verarbeitungsprozessen
 wie die Analyse von großen Datensätzen.
 
 Beispiele für einfache Tasks sind:
-
    - Das Sortieren einer Liste von Zahlen in aufsteigender oder 
 absteigender Reihenfolge
    - Das Durchsuchen einer Textdatei nach einem bestimmten Wort oder 
@@ -61,12 +60,11 @@ Zahlen
    - Das Laden von Daten aus einer Datenbank
 
 Beispiele für komplexe und aufteilbare Tasks sind:
-
-    - Die Analyse großer Datensätze, z.B. zur Erstellung von 
+   - Die Analyse großer Datensätze, z.B. zur Erstellung von 
 Vorhersagemodellen in der künstlichen Intelligenz oder Machine Learning
-    - Die Erstellung von Grafiken oder Diagrammen aus großen Datenmengen
-    - Die Simulation von physikalischen Prozessen oder komplexen Systemen
-    - Die Aufteilung von Daten in kleinere Teilmengen, die von mehreren 
+   - Die Erstellung von Grafiken oder Diagrammen aus großen Datenmengen
+   - Die Simulation von physikalischen Prozessen oder komplexen Systemen
+   - Die Aufteilung von Daten in kleinere Teilmengen, die von mehreren 
 Rechenknoten gleichzeitig verarbeitet werden können, um die 
 Verarbeitungsgeschwindigkeit zu erhöhen.
 
