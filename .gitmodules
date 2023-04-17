@@ -4,3 +4,6 @@
 [submodule "spark"]
 	path = spark
 	url = git@github.com:apache/spark.git
+[submodule "rmi-ek-pelias-damianik"]
+	path = rmi-ek-pelias-damianik
+	url = git@github.com:IT-Battalion/rmi-ek-pelias-damianik.git
