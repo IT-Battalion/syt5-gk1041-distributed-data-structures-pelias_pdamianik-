@@ -1,2 +1,0 @@
-'RepartitionByExpression ['id, 'b]
-+- LocalRelation <empty>, [none#0L, none#1, none#2]

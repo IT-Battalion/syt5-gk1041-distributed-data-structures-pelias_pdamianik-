@@ -1,2 +1,0 @@
-'Filter (1000 > ('a + 'id))
-+- LocalRelation <empty>, [none#0L, none#1, none#2]

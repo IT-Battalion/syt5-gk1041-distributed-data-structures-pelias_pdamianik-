@@ -1,2 +1,0 @@
-'Filter (10.0 > 'exp('a))
-+- LocalRelation <empty>, [none#0L, none#1, none#2]

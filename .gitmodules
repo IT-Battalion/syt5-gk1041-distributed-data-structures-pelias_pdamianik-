@@ -1,0 +1,6 @@
+[submodule "atomix"]
+	path = atomix
+	url = git@github.com:atomix/atomix.git
+[submodule "spark"]
+	path = spark
+	url = git@github.com:apache/spark.git
