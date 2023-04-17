@@ -41,6 +41,7 @@ können, um sicherzustellen, dass die Datenverarbeitung fehlertolerant
 und skalierbar bleibt. [1]
 
 #### Tasks
+
 Tasks sind Einheiten von Aufgaben oder Prozessen, die von einem 
 Computersystem ausgeführt werden können. In der Regel bestehen sie aus 
 einer Reihe von Schritten oder Algorithmen, die eine bestimmte Funktion 
@@ -50,23 +51,25 @@ wie das Sortieren einer Liste bis hin zu komplexen Verarbeitungsprozessen
 wie die Analyse von großen Datensätzen.
 
 Beispiele für einfache Tasks sind:
-   - Das Sortieren einer Liste von Zahlen in aufsteigender oder 
-absteigender Reihenfolge
-   - Das Durchsuchen einer Textdatei nach einem bestimmten Wort oder 
-Ausdruck
-   - Die Berechnung der Summe oder des Durchschnitts einer Liste von 
-Zahlen
-   - Die Generierung eines zufälligen Passworts
-   - Das Laden von Daten aus einer Datenbank
+
+- Das Sortieren einer Liste von Zahlen in aufsteigender oder 
+  absteigender Reihenfolge
+- Das Durchsuchen einer Textdatei nach einem bestimmten Wort oder 
+  Ausdruck
+- Die Berechnung der Summe oder des Durchschnitts einer Liste von 
+  Zahlen
+- Die Generierung eines zufälligen Passworts
+- Das Laden von Daten aus einer Datenbank
 
 Beispiele für komplexe und aufteilbare Tasks sind:
-   - Die Analyse großer Datensätze, z.B. zur Erstellung von 
-Vorhersagemodellen in der künstlichen Intelligenz oder Machine Learning
-   - Die Erstellung von Grafiken oder Diagrammen aus großen Datenmengen
-   - Die Simulation von physikalischen Prozessen oder komplexen Systemen
-   - Die Aufteilung von Daten in kleinere Teilmengen, die von mehreren 
-Rechenknoten gleichzeitig verarbeitet werden können, um die 
-Verarbeitungsgeschwindigkeit zu erhöhen.
+
+- Die Analyse großer Datensätze, z.B. zur Erstellung von 
+  Vorhersagemodellen in der künstlichen Intelligenz oder Machine Learning
+- Die Erstellung von Grafiken oder Diagrammen aus großen Datenmengen
+- Die Simulation von physikalischen Prozessen oder komplexen Systemen
+- Die Aufteilung von Daten in kleinere Teilmengen, die von mehreren 
+  Rechenknoten gleichzeitig verarbeitet werden können, um die 
+  Verarbeitungsgeschwindigkeit zu erhöhen.
 
 Diese komplexen und aufteilbaren Tasks erfordern häufig eine Aufteilung in 
 mehrere Teilaufgaben, die parallel auf verschiedenen Rechenknoten 
@@ -106,11 +109,31 @@ Weiteres ist im übrigen die Dokumentation auf der Website nicht vollständig un
 
 #### Spark
 
+**Sprachen: Java, Python, R and Scala**
+
 Da Atomix leider wirklich überhauptnicht funktioniert hat, haben wir uns an Spark herangewagt. Dazu haben wir uns wie auch bei Atomix erstmal examples angeschaut und das repository geklont. Anschließend habe ich mithilfe von `./build/mvn -DskipTests clean package` Spark und vorallem die Examples gebuildet. 
 
 Dann habe ich mittels `./bin/run-example SparkPi` das Pi example ausgeführt.
 
 Das hat funktioniert !!! :D
+
+###### Erklärung
+
+In der Spark-Implementierung des Pi-Beispiels wird die Arbeit, die darin besteht, zufällige Punkte zu generieren und die Anzahl der Punkte innerhalb des Einheitskreises zu zählen, auf mehrere Worker-Knoten in einem Spark-Cluster aufgeteilt.
+
+Die "parallelize"-Methode wird verwendet, um ein RDD von zufälligen Punkten zu erstellen, das dann über die verfügbaren Worker-Knoten im Cluster partitioniert wird. Jede Partition des RDD wird dann von einem Worker-Knoten unabhängig verarbeitet.
+
+Die Anzahl der Partitionen wird durch die Anzahl der verfügbaren Kerne im Spark-Cluster bestimmt. Standardmäßig versucht Spark, die Anzahl der Partitionen der Anzahl der Kerne im Cluster gleichzusetzen. Dies hilft sicherzustellen, dass die Arbeit gleichmäßig auf alle Worker-Knoten verteilt ist und dass jeder Worker-Knoten genug Arbeit hat, um beschäftigt zu bleiben.
+
+Sobald die Partitionen erstellt wurden, verarbeitet jeder Worker-Knoten seine eigene Partition unabhängig voneinander. Dies bedeutet, dass jeder Worker-Knoten seinen eigenen Satz von zufälligen Punkten generiert und die Anzahl der Punkte innerhalb des Einheitskreises zählt. Das Endergebnis wird dann durch die Kombination der Ergebnisse aus allen Worker-Knoten erhalten.
+
+Die Kombination der Ergebnisse erfolgt mit der "reduce"-Operation, die die Anzahl der Punkte innerhalb des Einheitskreises über alle Worker-Knoten summiert. Schließlich wird die Gesamtzahl der generierten Punkte durch die Summe der Anzahl der Punkte innerhalb des Einheitskreises geteilt, um eine Schätzung von Pi zu erhalten.
+
+![img](images/Spark-Architecture.png)
+
+RDDs sind die grundlegende Datenstruktur in Spark, die eine verteilte Sammlung von Objekten darstellen. Jedes RDD ist in der Regel auf mehrere Knoten im Spark-Cluster aufgeteilt und kann parallel verarbeitet werden. RDDs sind auch resilient, d.h. sie können bei einem Fehler automatisch wiederhergestellt werden.
+
+Die Transformationen auf RDDs ermöglichen es, die Daten innerhalb des RDDs zu verarbeiten und zu manipulieren. Hierzu gehören beispielsweise Filtern, Mapping, Reduktion und Gruppierung. Diese Transformationen erzeugen normalerweise ein neues RDD, das aus dem ursprünglichen RDD abgeleitet ist. Die Aktionen auf RDDs hingegen führen eine Berechnung auf dem RDD aus und geben ein Ergebnis zurück. Hierzu gehören beispielsweise das Zählen der Anzahl von Elementen in einem RDD oder das Speichern der Daten auf der Festplatte.
 
 #### RMI
 
@@ -133,4 +156,3 @@ Da Prof. Roschger der Überzeugung war, das unser RMI Beispiel vom letzten Semes
 [6] "Apache Spark RDD Programming Guide"; https://spark.apache.org/docs/latest/rdd-programming-guide.html#resilient-distributed-datasets-rdds; zuletzt besucht 16.02.2023
 
 [7] "Introduction to Atomix"; [Introduction to Atomix | Baeldung](https://www.baeldung.com/atomix); zuletzt besucht am 16.02.2023
-
